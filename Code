@@ -1,0 +1,17 @@
+Authorization: Basic base64_encode(Black_Cards:7ae720e3-1853-433b-846c-4d452e053127)
+requests.post(
+    'https://api.kik.com/v1/config',
+    auth=('<Black_Cards>', '<7ae720e3-1853-433b-846c-4d452e053127>'),
+    headers={
+        'Content-Type': 'application/json'
+    },
+    data=json.dumps({
+        "webhook": "https://example.com/incoming",
+        "features": {
+            "manuallySendReadReceipts": False,
+            "receiveReadReceipts": False,
+            "receiveDeliveryReceipts": False,
+            "receiveIsTyping": False
+        }
+    })
+)
